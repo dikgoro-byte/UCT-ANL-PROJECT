@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // This is the file that defines where the backend is located
 const api = axios.create({
-  baseURL: 'http://localhost:5001/api', // Backend URL
+  baseURL: 'https://uct-anl-project.onrender.com/api', // Backend URL
 });
 
 // This interceptor ensures the token is sent with every request
