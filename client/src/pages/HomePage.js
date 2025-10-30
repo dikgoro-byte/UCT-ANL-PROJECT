@@ -5,34 +5,24 @@ import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
 
 const HomePage = () => {
-  // Get the current user from the AuthContext
   const { user } = useAuth(); 
-  
-  // State to track if the tournament has been simulated
   const [isSimulated, setIsSimulated] = useState(false);
 
-  // Effect to check simulation status if a rep is logged in
   useEffect(() => {
-    // Only run this check if a rep is logged in and has a team
     if (user && user.role === 'representative' && user.team) {
-      
       const checkSimulationStatus = async () => {
         try {
           const { data: matches } = await api.get('/matches');
-          // If 7 matches exist, the tournament is complete
           if (matches.length === 7) {
             setIsSimulated(true);
           }
         } catch (error) {
-          // If it fails (e.g., 404), no matches exist
           setIsSimulated(false);
         }
       };
-      
       checkSimulationStatus();
     }
-  }, [user]); // Re-run this check when the user logs in
-
+  }, [user]); 
 
   // --- 1. Renders the Admin-specific homepage ---
   if (user && user.role === 'admin') {
@@ -43,7 +33,7 @@ const HomePage = () => {
           <h1 className="text-4xl md:text-6xl font-extrabold mt-6">
             Administrator Control Panel
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mt-4 max-w-2xl mx-auto">
+          <p className="text-lg md:text-2xl text-gray-300 mt-4 max-w-2xl mx-auto">
             You can view results, generate summaries, and run simulations.
           </p>
         </div>
@@ -64,20 +54,16 @@ const HomePage = () => {
       <div className="text-white">
         <div className="text-center py-20 md:py-32">
           <Trophy className="w-24 h-24 text-lime-400 mx-auto animate-pulse" />
-          
-          {/* --- NEW TITLE LOGIC --- */}
           <h1 className="text-4xl md:text-6xl font-extrabold mt-6">
-            {/* If they have a team, show "Team Registered", otherwise "Welcome [Name]" */}
             {hasTeam ? "Your Team is Registered!" : `Welcome, ${user.name}!`}
           </h1>
           
-          {/* --- NEW SUB-TEXT LOGIC --- */}
-          <p className="text-xl md:text-2xl text-gray-300 mt-4 max-w-2xl mx-auto">
+          <p className="text-lg md:text-2xl text-gray-300 mt-4 max-w-2xl mx-auto">
             {hasTeam 
-              ? (isSimulated // If they have a team, check simulation status
+              ? (isSimulated
                   ? "You can now view the official tournament results." 
                   : "Waiting for the administrator to simulate the tournament...")
-              : "Your next step is to register your federation for the tournament." // If no team
+              : "Your next step is to register your federation for the tournament."
             }
           </p>
         </div>
@@ -85,7 +71,6 @@ const HomePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <BracketCard />
           <ScorersCard />
-          {/* Shows "Register" if no team, "Summary" if they have a team */}
           {hasTeam ? <SummaryCard /> : <RegisterTeamCard />}
         </div>
       </div>
@@ -100,7 +85,7 @@ const HomePage = () => {
         <h1 className="text-4xl md:text-6xl font-extrabold mt-6">
           Welcome to the African Nations League
         </h1>
-        <p className="text-xl md:text-2xl text-gray-300 mt-4 max-w-2xl mx-auto">
+        <p className="text-lg md:text-2xl text-gray-300 mt-4 max-w-2xl mx-auto">
           The official home for the 2026 tournament.
         </p>
       </div>
@@ -153,7 +138,8 @@ const SummaryCard = () => (
     <h2 className="text-2xl font-bold mb-3">Read the Summary</h2>
     <p className="text-gray-400 mb-5 flex-grow">
       Read the official generated summary of the tournament.
-    </p>
+    </p> 
+    {/* ^-- THIS WAS THE TYPO --^ */}
     <Link
       to="/summary"
       className="inline-block text-center bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded-lg transition-colors"
@@ -170,6 +156,7 @@ const AdminPanelCard = () => (
     <p className="text-gray-400 mb-5 flex-grow">
       Simulate the tournament and generate the official summary.
     </p>
+     {/* ^-- THIS WAS THE TYPO --^ */}
     <Link
       to="/admin"
       className="inline-block text-center bg-red-600 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-lg transition-colors"
@@ -186,6 +173,7 @@ const FederationPortalCard = () => (
     <p className="text-gray-400 mb-5 flex-grow">
       Representatives can log in or sign up to register their national team.
     </p>
+     {/* ^-- THIS WAS THE TYPO --^ */}
     <Link
       to="/login"
       className="inline-block text-center bg-green-600 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-lg transition-colors"

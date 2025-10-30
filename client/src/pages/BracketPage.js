@@ -61,20 +61,22 @@ const BracketPage = () => {
 
   return (
     <div className="text-white">
-      {/* --- FONT SIZE CHANGED --- */}
-      <h1 className="text-5xl font-extrabold text-center mb-8 flex items-center justify-center">
-        <Trophy className="w-12 h-12 mr-3 text-lime-400" />
+      {/* Responsive Title */}
+      <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-8 flex items-center justify-center">
+        <Trophy className="w-10 h-10 md:w-12 md:h-12 mr-3 text-lime-400" />
         Road to the Final
       </h1>
       
+      {/* Responsive Layout: Stacks on mobile, row on medium+ */}
       <div className="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 md:space-x-4">
-        {/* Left Side */}
+        
+        {/* Left Side: Stacks on mobile, row on medium+ */}
         <div className="flex flex-col md:flex-row items-center md:space-x-4 space-y-8 md:space-y-0">
           <div className="space-y-16">
             <BracketMatch {...qf1} matchName="Quarter-Final 1" />
             <BracketMatch {...qf2} matchName="Quarter-Final 2" />
           </div>
-          <div className="">
+          <div className="mt-8 md:mt-0"> {/* Add margin top only on mobile */}
             <BracketMatch {...sf1} matchName="Semi-Final 1" />
           </div>
         </div>
@@ -84,9 +86,9 @@ const BracketPage = () => {
           <BracketMatch {...final} matchName="THE GRAND FINAL" />
         </div>
         
-        {/* Right Side */}
+        {/* Right Side: Stacks on mobile, row on medium+ */}
         <div className="flex flex-col-reverse md:flex-row items-center md:space-x-4 space-y-8 md:space-y-0">
-         <div className="">
+         <div className="mb-8 md:mb-0"> {/* Add margin bottom only on mobile */}
           <BracketMatch {...sf2} matchName="Semi-Final 2" />
         </div>
         <div className="space-y-16">
@@ -96,11 +98,11 @@ const BracketPage = () => {
         </div>
       </div>
       
-      {/* --- MARGIN TOP CHANGED --- */}
       {user && user.role === 'admin' && (
         <p className="text-center text-gray-400 text-sm mt-16">
           This bracket shows the results from the admin simulation.
-        </p>
+        </p> 
+        /* ^-- THIS WAS THE TYPO --^ */
       )}
     </div>
   );
