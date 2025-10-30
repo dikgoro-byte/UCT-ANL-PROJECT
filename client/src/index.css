@@ -1,0 +1,20 @@
+/* Imports Tailwind's base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* This ensures the root HTML element is also dark */
+html {
+  @apply bg-black;
+}
+
+/* This is the "black to dark blue to green" gradient */
+body {
+  @apply bg-gradient-to-b from-black via-blue-950 to-lime-950 text-gray-100 min-h-screen;
+
+  /* This ensures the gradient is smooth and legible */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  
+}
