@@ -4,27 +4,22 @@
 
 ## 🚀 Live Demo
 
-* **Live Frontend (Netlify):** `[YOUR_DEPLOYED_NETLIFY_LINK_HERE]`
-* **Live Backend (Render):** `[YOUR_DEPLOYED_RENDER_LINK_HERE]`
-
----
+* **Live Frontend (Netlify):** `[https://sprightly-paletas-4c279a.netlify.app/]`
+* **Live Backend (Render):** `[https://uct-anl-project.onrender.com]`
 
 ## 📸 Screenshots
 
-*(Replace these with your own screenshots)*
-
-| Homepage (Visitor) | Homepage (Admin) |
-| :---: | :---: |
-|  |  |
-| **Bracket Page** | **Admin Panel** |
-| 
-
-[Image of Tournament Bracket]
- |  |
-| **"View My Team" Page** | **Country Selection** |
-|  |  |
-
----
+![Visitor Landing - Home Page](image.png)
+![alt text](image-2.png)
+ ![Administrator Home Page - Logged In](image-3.png) 
+|![Bracket Page](image-4.png) 
+ |![ Admin Panel Page](image-5.png)
+ ![Top Goal Scorers Page](image-7.png)
+ ![Representative Landing - Home Page](image-8.png)
+ ![View My Team - Representative Logged In](image-9.png)
+ ![Tournament Summary Page](image-10.png)
+ ![Administrator Sign Up](image-11.png)
+| ![Representative Registration - Pick Country Page](image-12.png)
 
 ## ✨ Key Features
 
@@ -46,10 +41,10 @@ This application fulfills all project requirements, including:
     * **Bracket Page:** Dynamically builds the "Road to the Final" bracket from the 7 simulated matches.
     * **Top Scorers Page:** Aggregates and displays a sorted list of all goalscorers.
     * **"View My Team" Page:** A protected route for reps to view their generated 23-player squad and see their captain.
-* **"Mock AI" Summary Generation:**
+* **"AI" Summary Generation:**
     * A safe, free, and 100% reliable "Mock AI" feature.
     * After simulation, the Admin can click "Generate Summary." This finds the tournament winner and saves a context-aware, pre-written summary to the database for all users to see.
-* **"Fake" Email Notification:**
+* *** Email Notification:**
     * Fulfills the email requirement in a safe, risk-free way.
     * On simulation completion, the Admin sees a "Federations notified by email" pop-up.
     * The backend logs a "Simulated Email" to the console, proving the logic is in place to email all registered representatives.
@@ -57,16 +52,23 @@ This application fulfills all project requirements, including:
     * The homepage is fully responsive and shows different content based on user role (Admin, Rep, or Visitor).
     * A 4-second success timer automatically redirects a rep after team registration.
 
----
+    ## Log In Credentials:
+    To sign up and log in as the administrator I suggest using the following:
+    Username: Dikgoro Makaleng
+    Password: Fineboyy2k#
+    Email: dikgorom@gmail.com
 
+    To Sign Up and Log in as the representative of a tem I suggest using the following:
+    Username: Tyla Seethal
+    Password: Makemesweat123#
+    Email: water@gmail.com
+    
 ## 🛠️ Tech Stack
 
 * **Frontend:** React, React Router, TailwindCSS, Axios
 * **Backend:** Node.js, Express.js, Mongoose
 * **Database:** MongoDB (via MongoDB Atlas)
 * **Authentication:** JSON Web Tokens (JWT) & bcrypt.js
-
----
 
 ## ⚙️ Running Locally
 
@@ -79,5 +81,5 @@ This application fulfills all project requirements, including:
 ### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
-cd YOUR_REPO_NAME
+git clone [https://github.com/dikgoro-byte/UCT-ANL-PROJECT](https://github.com/dikgoro-byte/UCT-ANL-PROJECT)
+cd dikgoro-byte
